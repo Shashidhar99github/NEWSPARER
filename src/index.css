@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f4f1ea] text-gray-900;
+    font-family: 'Crimson Text', serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .newspaper-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .article-title {
+    @apply font-bold text-2xl md:text-3xl lg:text-4xl font-serif leading-tight;
+  }
+
+  .article-excerpt {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+
+  .section-title {
+    @apply text-xl md:text-2xl font-bold border-b-2 border-gray-900 mb-4 pb-2;
+  }
+
+  .vintage-button {
+    @apply px-4 py-2 border-2 border-gray-900 hover:bg-gray-900 hover:text-white transition-colors;
+  }
+
+  .nav-link {
+    @apply hover:underline flex items-center gap-2 px-3 py-2;
+  }
+
+  .nav-link.active {
+    @apply font-bold underline;
+  }
+
+  .article-card {
+    @apply border-b-2 border-gray-300 pb-6 mb-6 last:border-b-0;
+  }
+
+  .article-meta {
+    @apply text-sm text-gray-600 mb-2 italic;
+  }
+
+  .drop-cap::first-letter {
+    @apply float-left text-7xl font-bold mr-3 mt-1;
+  }
+
+  .breaking-news-ticker {
+    @apply bg-gray-900 text-white py-2 px-4 text-sm whitespace-nowrap overflow-hidden;
+  }
+
+  .stock-ticker {
+    @apply flex gap-4 text-sm py-2 overflow-x-auto whitespace-nowrap;
+  }
+}
+
+.vintage-texture {
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.newspaper-column {
+  column-width: 300px;
+  column-gap: 2rem;
+}
+
+@keyframes tickerAnimation {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
